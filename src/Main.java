@@ -1,30 +1,37 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
+import java.util.SplittableRandom;
+
 
 public class Main {
     public static void main(String[] args) {
 
         get_information();
 
+
     }
 
     static void get_information() {
+        ArrayList<Substance> allSubstance = new ArrayList<>();
+
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Enter the number of substances that you want:");
         int number_of_substance = sc.nextInt();
+        sc.nextLine();
 
         for (int i = 0; i < number_of_substance; i++) {
-            System.out.println("Enter the name of the " + i + " substance");
-            String name = sc.nextLine();
 
-            System.out.println("Enter the chemical composition od the " + i + " substance");
-            String chimi_comp = sc.nextLine();
+            System.out.println("Enter the name of the " + (i + 1) + " substance");
+            String name = sc.next();
+            sc.nextLine();
 
-            System.out.println("Enter the mass for the " + i + " substance");
+            System.out.println("Enter the mass for the " + (i + 1) + " substance");
             double mass = sc.nextDouble();
+            sc.nextLine();
 
-            System.out.println("Enter the initial temperature for the " + 1 + " substance");
+            System.out.println("Enter the initial temperature for the " + (i + 1) + " substance");
             double temp_init = sc.nextDouble();
 
 
@@ -35,10 +42,13 @@ public class Main {
             double TE = 100;
 
 
-            Substance substance = new Substance(name, chimi_comp, mass, temp_init, chal_mass, LF, LV, TF, TE);
-
+            Substance substance = new Substance(name, mass, temp_init, chal_mass, LF, LV, TF, TE);
+            allSubstance.add(substance);
 
         }
-    }
+        for (Substance i : allSubstance) {
 
+            System.out.println(i.toString());
+        }
+    }
 }
