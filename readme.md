@@ -4,9 +4,9 @@
 
 ## The objective 
 
-    -a program that calculate the final temperature 
+-a program that calculate the final temperature 
     
-    -Can help you correct some exercices
+-Can help you correct some exercices
 
 ## Information about the program
 ### The units that are used:
@@ -18,6 +18,6 @@
 
 ___
 ## Quick note
-    This isn't the best program, it's slow. 
-    I'm just a suddent that tries to lear coding and sorry a part of the code is in french.
+This isn't the best program, it's slow. 
+Sorry a part of the code is in french.
     
