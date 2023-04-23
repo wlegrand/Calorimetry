@@ -1,5 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -58,6 +60,26 @@ public class Main {
 
                 if (!substanceFound) {
                     System.out.println("Substance not found in the file: " + name);
+                    System.out.println("Please provide the following information to add the substance:");
+                    System.out.print("Enter chal_mass: ");
+                    double chal_mass = sc.nextDouble();
+                    System.out.print("Enter LF: ");
+                    double LF = sc.nextDouble();
+                    System.out.print("Enter LV: ");
+                    double LV = sc.nextDouble();
+                    System.out.print("Enter TF: ");
+                    double TF = sc.nextDouble();
+                    System.out.print("Enter TE: ");
+                    double TE = sc.nextDouble();
+
+                    Substance substance = new Substance(name, mass, temp_init, chal_mass, LF, LV, TF, TE);
+                    allSubstance.add(substance);
+
+                    try (FileWriter writer = new FileWriter(file, true)) {
+                        writer.write("\n" + name + ", " + chal_mass + ", " + LF + ", " + LV + ", " + TF + ", " + TE);
+                    } catch (IOException e) {
+                        System.out.println("Error writing to the file: " + file);
+                    }
                 }
 
             } catch (FileNotFoundException e) {
