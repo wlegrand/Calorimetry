@@ -1,4 +1,5 @@
 public class Substance {
+
     String name;
 
     double mass;
@@ -19,6 +20,7 @@ public class Substance {
         this.TF = TF;
         this.TE = TE;
     }
+
     @Override
     public String toString() {
         return "Substance{" +
@@ -33,7 +35,12 @@ public class Substance {
                 '}';
     }
 
-    
+    int check_state_change_temperature_init(double temp_init) {
+        if (temp_init > TF && temp_init < TE) {
+            return 0;
+        }
+        return 0;
+    }
 }
 
 
