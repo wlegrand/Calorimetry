@@ -35,9 +35,16 @@ public class Substance {
                 '}';
     }
 
-    int check_state_change_temperature_init(double temp_init) {
+    int check_state_temperature_init_fusion(double temp_init) {
+        double temp_final = 0;
         if (temp_init > TF && temp_init < TE) {
             return 0;
+        }
+        else if (temp_init > TF && temp_final < TF){
+            return -1;
+        } else if (temp_init< TF && temp_final > TF) {
+            return 1;
+
         }
         return 0;
     }

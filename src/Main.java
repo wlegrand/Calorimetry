@@ -108,7 +108,7 @@ public class Main {
         double temp_init2 = substances.get(1).temp_init;
         double LF2 = substances.get(1).LF;
         double LV2 = substances.get(1).LV;
-
+        
 
 
         double temp_final = (mass1*chal_mass1*temp_init1 - mass1 * LF1 * check_state - mass1 * LV1 * check_state + mass2 * chal_mass2 * temp_init2 - mass2 * LF2 * check_state - mass2 * LV2* check_state)
