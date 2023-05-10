@@ -15,10 +15,15 @@ public class Check {
             return 0;
         } else if (temp_init > TF && temp_final < TF) {
             return -1;
-        }else {
+        }else if (temp_init < TE && temp_final > TE){
             return 1;
         }
+        else {
+            // I have to add ==
+            return 0;
+        }
     }
+
     static int state_temp_init_ebullition(double temp_init, double temp_final, double TF, double TE){
         if (temp_init < TF &&(temp_final < TF && temp_init > TE )){
             return 0;
