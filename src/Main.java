@@ -117,4 +117,11 @@ public class Main {
 
         return temp_final;
     }
+
+    static double calculate_mass(double temp){
+        double mass = 10;
+        System.out.println("The final temperature will be "+temp);
+        return mass;
+    }
+
 }
