@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println(calculate(get_information(), 0));
+        System.out.println(get_information());
 
     }
 
@@ -96,32 +96,5 @@ public class Main {
         return allSubstance;
     }
 
-    static double calculate(ArrayList<Substance> substances, int check_state) {
-        double mass1 = substances.get(0).mass;
-        double chal_mass1 = substances.get(0).chal_mass;
-        double temp_init1 = substances.get(0).temp_init;
-        double LF1 = substances.get(0).LF;
-        double LV1 = substances.get(0).LV;
-
-        double mass2 = substances.get(1).mass;
-        double chal_mass2 = substances.get(1).chal_mass;
-        double temp_init2 = substances.get(1).temp_init;
-        double LF2 = substances.get(1).LF;
-        double LV2 = substances.get(1).LV;
-        
-
-
-        double temp_final = (mass1*chal_mass1*temp_init1 - mass1 * LF1 * check_state - mass1 * LV1 * check_state + mass2 * chal_mass2 * temp_init2 - mass2 * LF2 * check_state - mass2 * LV2* check_state)
-                /(mass1 * chal_mass1 + mass2*chal_mass2);
-
-
-        return temp_final;
-    }
-
-    static double calculate_mass(double temp){
-        double mass = 10;
-        System.out.println("The final temperature will be "+temp);
-        return mass;
-    }
 
 }
