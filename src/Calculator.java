@@ -1,21 +1,19 @@
+import java.util.ArrayList;
+
 public class Calculator {
-    double mass;
-    double temp_init;
-    double chal_mass;
-    double LF;
-    double LV;
+   ArrayList<Substance> allSubstance;
 
-    double temp_final;
-
-    public Calculator(double mass, double temp_init, double chal_mass) {
-        this.mass = mass;
-        this.temp_init = temp_init;
-        this.chal_mass = chal_mass;
-
+    public Calculator(ArrayList<Substance> allSubstance){
+        this.allSubstance = allSubstance;
     }
 
-    static double first_calc(double mass, double temp_init, double chal_mass){
-        return temp_init;
+    static double first_calc(ArrayList<Substance> allSubstance){
+        double nominator = 0;
+        double denominator = 0;
+        for (Substance substance : allSubstance) {
+            nominator = nominator + substance.mass * substance.chal_mass * substance.temp_init;
+            denominator = denominator + substance.mass * substance.chal_mass;
+        }
+        return nominator/denominator;
     }
-
 }
