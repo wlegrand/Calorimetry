@@ -7,8 +7,6 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
-        System.out.println(get_information());
         System.out.println(Calculator.first_calc(get_information()));
     }
 

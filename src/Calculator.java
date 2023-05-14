@@ -16,4 +16,13 @@ public class Calculator {
         }
         return nominator/denominator;
     }
+    static double calc_temp_final(ArrayList<Substance> allSubstance, int checkFusion, int checkVaporisation){
+        double nominator = 0;
+        double denominator = 0;
+        for (Substance substance : allSubstance) {
+            nominator = nominator + substance.mass * substance.chal_mass * substance.temp_init - substance.mass * substance.LF * checkFusion - substance.mass * substance.LV * checkVaporisation;
+            denominator = denominator + substance.mass * substance.chal_mass;
+        }
+        return nominator/denominator;
+    }
 }
