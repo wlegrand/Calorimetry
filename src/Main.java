@@ -3,12 +3,20 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println(Calculator.first_calc(get_information()));
-    }
+        public static void main(String[] args) {
+            ArrayList<Substance> infos = get_information();
+            double firstValueOfTF = Calculator.first_calc(infos);
+
+            HashMap checkFusion = Check.state_temp_init_fusion(infos, firstValueOfTF);
+            HashMap checkVaporisation = Check.state_temp_init_ebullition(infos, firstValueOfTF);
+
+            double tempFinal = Calculator.calc_temp_final(infos, checkFusion, checkVaporisation);
+            System.out.println("The final temperature is: " + tempFinal);
+        }
 
     static ArrayList<Substance> get_information() {
         ArrayList<Substance> allSubstance = new ArrayList<>();
